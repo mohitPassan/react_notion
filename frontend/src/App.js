@@ -14,10 +14,12 @@ function App() {
             <span>Records</span>
         </Nav>
         <Container>
-          <Chart area="chart1" />
-          <Chart area="chart2" />
-          <Chart area="chart3" />
-          <Chart area="chart4" />
+          <Chart area="cc" />
+          <Chart area="b" />
+          <Chart area="c1" />
+          <Chart area="c2" />
+          <Chart area="c3" />
+          <Chart area="c4" />
         </Container>
       </div>
     </ThemeProvider>
