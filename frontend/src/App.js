@@ -2,6 +2,7 @@ import Container from "./components/container";
 import Nav from "./components/Nav";
 import { ThemeProvider } from "styled-components";
 import PieChart from "./components/icons/pieChart";
+import Chart from "./components/chart";
 
 function App() {
 
@@ -12,6 +13,12 @@ function App() {
             <PieChart />
             <span>Records</span>
         </Nav>
+        <Container>
+          <Chart area="chart1" />
+          <Chart area="chart2" />
+          <Chart area="chart3" />
+          <Chart area="chart4" />
+        </Container>
       </div>
     </ThemeProvider>
   );
