@@ -1,44 +1,19 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import Container from "./components/container";
+import Nav from "./components/Nav";
+import { ThemeProvider } from "styled-components";
+import PieChart from "./components/icons/pieChart";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const tasksResponse = axios.get('http://localhost:5000/');
-    
-    tasksResponse
-      .then((result) => {
-        setTasks(result.data);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-  }, [tasks.length, error]);
 
   return (
-    <div className="App">
-      {
-        !error ? (
-          <>
-            {
-              tasks.length !== 0 ? (
-                <ul>
-                  {
-                    tasks.map((task) => <li key={task.task}>{task.task}: {task.status ? "Done" : "Pending"}</li>)
-                  }
-                </ul>
-              ) : (
-                <h2>No tasks</h2>
-              )
-            }
-          </>
-        ) : (
-          <h1>Error aagya</h1>
-        )
-      }
-    </div>
+    <ThemeProvider theme={{ color: "#388A85" }}>
+      <div className="App">
+        <Nav>
+            <PieChart />
+            <span>Records</span>
+        </Nav>
+      </div>
+    </ThemeProvider>
   );
 }
 
